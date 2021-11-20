@@ -11,7 +11,7 @@ export const QUESTION_BANK = [
     Morbi iaculis velit at massa imperdiet, eu interdum tellus efficitur. Mauris in placerat sem. Nulla varius quam id ligula dignissim, quis condimentum quam sodales. Morbi euismod, orci vel vestibulum fermentum, mi erat tincidunt arcu, in varius nulla massa nec libero. Quisque congue lacinia consequat. Sed porttitor, justo malesuada rutrum efficitur, quam nisl mollis orci, at rhoncus odio lacus vel purus. Proin a arcu ornare lectus ornare tempor. Nulla vel scelerisque dolor. Fusce pellentesque efficitur turpis, eget condimentum turpis placerat et. Aenean malesuada consectetur risus ut suscipit. Vestibulum at quam vitae diam pellentesque dictum in id tellus. Phasellus semper, nisl sit amet commodo sodales, justo ante blandit ligula, ac eleifend lectus sapien non mi.
     \n
     Vivamus finibus euismod ipsum sit amet fermentum. Nunc feugiat ante dui, non suscipit erat laoreet id. Morbi consectetur volutpat nisl lobortis maximus. Nulla iaculis pretium ligula, ut viverra turpis maximus nec. In et ex sed velit malesuada pretium vel vel nisl. Morbi convallis gravida odio, ut tempor tellus. Proin lobortis nisi tellus, eu consectetur purus ornare faucibus. Maecenas consequat elit arcu, ac feugiat elit fermentum vitae. Suspendisse enim nibh, aliquet in aliquet nec, maximus euismod libero. Vivamus imperdiet suscipit lectus, ac pellentesque nisi pharetra quis. `,
-    media: 'https://s3.eu-west-2.amazonaws.com/luxurylondon.co.uk-storage-bucket-001/images/articles-body/1316/sage-flowers-selection.jpeg',
+    media: 'https://im7.ezgif.com/tmp/ezgif-7-f43ea32d2c52.gif',
     startingCode: 'sadfasdfasdfasdfasdfasdfkjnasdlfkjnaskdlfaksjdlfnasdfnasdfjnasdfnalsdkgnasdlgnaskljdfasdfajsdk'
   },
   {
