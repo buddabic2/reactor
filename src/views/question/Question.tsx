@@ -1,5 +1,9 @@
 import CellList from '../../components/cell-list'
+import CodeCell from '../../components/code-cell'
 import styled from 'styled-components'
+import { useActions } from '../../hooks/use-actions'
+import { useTypedSelector } from '../../hooks/use-typed-selector' 
+import { Cell } from '../../state'
 
 interface QuestionProps {
   title: string
@@ -9,6 +13,14 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({ title, description, media, startingCode }) => {
+  const { insertCellAfter } = useActions()
+  // Hack, loads just one cell
+  // @ts-ignore
+  const cells: Cell[] = useTypedSelector(({ cells: { order, data } }) => order.map((id: string | number) => data[id]))
+  if (!cells.length) {
+    insertCellAfter(null, 'code')
+  }
+
   return (
     <QuestionWrapper>
       <QuestionCard>
@@ -18,7 +30,7 @@ const Question: React.FC<QuestionProps> = ({ title, description, media, starting
           <img src={media} alt="question image" />
         </QuestionTop>
       </QuestionCard>
-      <CellList addCellEnabled={false} startingCode={startingCode}/>
+      {cells.length && <CodeCell cell={cells[0]} startingCode={startingCode}/>}
     </QuestionWrapper>
   )
 }
@@ -34,6 +46,7 @@ const QuestionWrapper = styled.div`
 const QuestionCard = styled.div`
   background-color: #212529;
   border-radius: 5px;
+  margin-bottom: 50px;
   `
 
 const QuestionTitle = styled.h3`
