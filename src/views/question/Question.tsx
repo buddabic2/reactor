@@ -22,6 +22,8 @@ const parseQuestionDescriptionElement = (type: string, content: string | string[
     case DescriptionElementType.LIST:
       // @ts-ignore
       return <ul>{content.map(el => <li>{el}</li>)}</ul>
+    case DescriptionElementType.REMINDER:
+      return <h3>{content}</h3>
   }
 }
 

@@ -38,7 +38,7 @@ export const QUESTION_BANK: Question[] = [
         content: 'Remeber to call function "show" with your component to render it in the preview window (ex. show(<App />))'
       },
     ],
-    media: 'https://im7.ezgif.com/tmp/ezgif-7-f43ea32d2c52.gif',
+    media: 'https://media.giphy.com/media/x7PoeXzpxUwiHCdSdH/giphy.gif',
     startingCode: 'sadfasdfasdfasdfasdfasdfkjnasdlfkjnaskdlfaksjdlfnasdfnasdfjnasdfnalsdkgnasdlgnaskljdfasdfajsdk'
   },
   {
@@ -63,7 +63,7 @@ export const QUESTION_BANK: Question[] = [
         content: 'Remeber to call function "show" with your component to render it in the preview window (ex. show(<App />))'
       }
     ],
-    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    media: 'https://i.ibb.co/Nsn4ysm/form-image.png',
     startingCode: `import { useState, useEffect } from 'react';
     const App = () => {
       const [password, setPassword] = useState('');

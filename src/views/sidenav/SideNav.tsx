@@ -3,9 +3,6 @@ import SideNavButton from './SideNavButton'
 import SideNavLink from './SideNavLink'
 import SideNavHeader from './SideNavHeader'
 import { Link } from "react-router-dom";
-import LinkedIn from '../../assets/linkedin-logo.png'
-import Gtthub from '../../assets/github-sign.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface SideNavProps {
   questionsList: {
@@ -15,7 +12,8 @@ interface SideNavProps {
 }
 
 const learningCentreList = [
-  { label: 'React', href: 'https://www.freecodecamp.org/learn/front-end-development-libraries/#react' },
+  { label: 'React Documentation', href: 'https://reactjs.org/docs/getting-started.html' },
+  { label: 'React Practice', href: 'https://www.freecodecamp.org/learn/front-end-development-libraries/#react' },
   { label: 'Array', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array' },
   { label: 'String', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' }
 ]
@@ -32,10 +30,10 @@ const SideNav: React.FC<SideNavProps> = ({ questionsList }) => {
       </SideNavHeader>
       <SideNavFooter>
         <p>by Dawid Budaszewski</p>
-        <a href="https://github.com/buddabic2">
+        <a href="https://github.com/buddabic2" target="_blank" rel="noreferrer">
           <i className="fab fa-github-square" />
         </a>
-        <a href="https://www.linkedin.com/in/dawid-budaszewski/">
+        <a href="https://www.linkedin.com/in/dawid-budaszewski/" target="_blank" rel="noreferrer">
           <i className="fab fa-linkedin" />
         </a>
       </SideNavFooter>
@@ -78,6 +76,7 @@ const SideNavFooter = styled.div`
   display: flex;
   position: absolute;
   bottom: 0;
+  margin: 5px;
 
   i {
     color: #dee2e6;
@@ -85,5 +84,9 @@ const SideNavFooter = styled.div`
 
   p {
     margin: 0;
+  }
+
+  a:first-of-type {
+    margin: 0 10px;
   }
 `

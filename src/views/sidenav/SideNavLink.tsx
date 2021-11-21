@@ -11,8 +11,10 @@ const SideNavLink: React.FC<SideNavLinkProps> = ({ label, href }) => {
 
   return (
     <SideNavLinkWrapper>
-      <a href={href} target="_blank" rel="noreferrer">{label}</a>
-      <FontAwesomeIcon className="icon" icon={faExternalLinkAlt}/>
+      <a href={href} target="_blank" rel="noreferrer">
+        {label}
+        <FontAwesomeIcon className="icon" icon={faExternalLinkAlt}/>
+      </a>
     </SideNavLinkWrapper>
   )
 }

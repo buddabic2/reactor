@@ -13,7 +13,7 @@ const LandingPage = () => {
         <h1>Reactor</h1>
         <h2>Practice React interview questions</h2>
         <p>Use the navigation on the left hand side to practise different React interview questions. Those are meant to give junior developers a taster on what to expect during their first interviews.</p>
-        <p>Reactor is still very much in development. Please do not be discouraged if you encourage bugs!</p>
+        <p>Reactor is still very much in development. Please do not be discouraged if you encounter bugs!</p>
       </LandingPageWrapper>
     </NewLandingPageWrapper>
   )
