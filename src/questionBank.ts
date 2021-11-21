@@ -39,7 +39,13 @@ export const QUESTION_BANK: Question[] = [
       },
     ],
     media: 'https://media.giphy.com/media/x7PoeXzpxUwiHCdSdH/giphy.gif',
-    startingCode: 'sadfasdfasdfasdfasdfasdfkjnasdlfkjnaskdlfaksjdlfnasdfnasdfjnasdfnalsdkgnasdlgnaskljdfasdfajsdk'
+    startingCode: `const App = () => {
+      return (
+        <h1>Hello World!</h1>
+      )
+    }
+    
+    show(<App />)`
   },
   {
     title: 'Form',
@@ -64,46 +70,13 @@ export const QUESTION_BANK: Question[] = [
       }
     ],
     media: 'https://i.ibb.co/Nsn4ysm/form-image.png',
-    startingCode: `import { useState, useEffect } from 'react';
-    const App = () => {
-      const [password, setPassword] = useState('');
-      const [email, setEmail] = useState('');
-      const [buttonDisabled, setButtonDisabled] = useState(true);
-    
-      const handleLogin = () => {
-        alert(email, password);
-      };
-    
-      useEffect(() => {
-        if (email && password.length > 6) {
-          setButtonDisabled(false);
-        } else {
-          setButtonDisabled(true);
-        }
-      }, [email, password]);
-    
+    startingCode: `const App = () => {
       return (
-        <>
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-          <button onClick={() => handleLogin()} disabled={buttonDisabled}>
-            Login
-          </button>
-        </>
-      );
-    };
+        <h1>Hello World!</h1>
+      )
+    }
     
-    show(<App />);`
+    show(<App />)`
   },
   {
     title: 'Lorem Ipsum 1',
@@ -225,4 +198,49 @@ export const QUESTION_BANK: Question[] = [
     media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     startingCode: ''
   }
+]
+
+
+const answers = [
+  
+  `import { useState, useEffect } from 'react';
+  const App = () => {
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [buttonDisabled, setButtonDisabled] = useState(true);
+  
+    const handleLogin = () => {
+      alert(email, password);
+    };
+  
+    useEffect(() => {
+      if (email && password.length > 6) {
+        setButtonDisabled(false);
+      } else {
+        setButtonDisabled(true);
+      }
+    }, [email, password]);
+  
+    return (
+      <>
+        <input
+          type="text"
+          name="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <button onClick={() => handleLogin()} disabled={buttonDisabled}>
+          Login
+        </button>
+      </>
+    );
+  };
+  
+  show(<App />);`
 ]
