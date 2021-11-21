@@ -14,8 +14,10 @@ interface SideNavProps {
 const learningCentreList = [
   { label: 'React Documentation', href: 'https://reactjs.org/docs/getting-started.html' },
   { label: 'React Practice', href: 'https://www.freecodecamp.org/learn/front-end-development-libraries/#react' },
-  { label: 'Array', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array' },
-  { label: 'String', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' }
+  { label: 'JS Array', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array' },
+  { label: 'JS String', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' },
+  { label: 'JS Object', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object' },
+  { label: 'Scrimba Course', href: 'https://scrimba.com/learn/learnreact' },
 ]
 
 const SideNav: React.FC<SideNavProps> = ({ questionsList }) => {
