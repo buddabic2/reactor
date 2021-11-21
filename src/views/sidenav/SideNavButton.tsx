@@ -15,7 +15,6 @@ const SideNavButton: React.FC<SideNavButtonProps> = ({ label, href }) => {
   return (
     <SideNavButtonWrapper active={location.pathname === `/${href}`}>
       <Link to={href}>{label}</Link>
-      <span></span>
     </SideNavButtonWrapper>
   )
 }

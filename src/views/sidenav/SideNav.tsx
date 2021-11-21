@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import SideNavButton from './SideNavButton'
+import SideNavLink from './SideNavLink'
+import SideNavHeader from './SideNavHeader'
 import { Link } from "react-router-dom";
+import LinkedIn from '../../assets/linkedin-logo.png'
+import Gtthub from '../../assets/github-sign.png'
 
 interface SideNavProps {
   questionsList: {
@@ -9,14 +13,31 @@ interface SideNavProps {
   }[]
 }
 
+const learningCentreList = [
+  { label: 'React', href: 'https://www.freecodecamp.org/learn/front-end-development-libraries/#react' },
+  { label: 'Array', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array' },
+  { label: 'String', href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' }
+]
+
 const SideNav: React.FC<SideNavProps> = ({ questionsList }) => {
   return (
     <SideNavWrapper>
       <Logo><Link to='/'>Reactor</Link></Logo>
-      <SideNavHeader>Questions</SideNavHeader>
-      <SideNavQuestionsWrapper>
-        {questionsList.map(({ title, href }) => <SideNavButton label={title} href={href}/>)}
-      </SideNavQuestionsWrapper>
+      <SideNavHeader label='Questions'>
+        <SideNavQuestionsWrapper>{questionsList.map(({ title, href }) => <SideNavButton label={title} href={href}/>)}</SideNavQuestionsWrapper>
+      </SideNavHeader>
+      <SideNavHeader label='Learning Centre'>
+        {learningCentreList.map(({ label, href }) => <SideNavLink label={label} href={href}/>)}
+      </SideNavHeader>
+      <SideNavFooter>
+        <p>by Dawid Budaszewski</p>
+        <a href="https://github.com/buddabic2">
+          <img src={Gtthub} alt="" />
+        </a>
+        <a href="https://www.linkedin.com/in/dawid-budaszewski/">
+          <img src={LinkedIn} alt="" />
+        </a>
+      </SideNavFooter>
     </SideNavWrapper>
   )
 }
@@ -25,8 +46,11 @@ export default SideNav
 
 const SideNavWrapper = styled.div`
   min-width: 280px;
-  min-height: 100vh;
   background-color: #212529;
+  /* position: relative; */
+  position: fixed;
+  height: 100%;
+  overflow: auto;
 `
 
 const Logo = styled.div`
@@ -44,12 +68,21 @@ const Logo = styled.div`
   border-bottom: 1px solid rgb(52, 58, 64);
 `
 
-const SideNavHeader = styled.h3`
-  font-size: 1.4rem;
-  padding-left: 20px;
-  font-weight: 300;
-`
-
 const SideNavQuestionsWrapper = styled.div`
   overflow: scroll;
+  max-height: 300px;
+`
+
+const SideNavFooter = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  p {
+    margin: 0;
+  }
+
+  img {
+    height: 15px;
+    width: 15px;
+  }
 `

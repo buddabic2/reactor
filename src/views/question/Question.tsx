@@ -1,15 +1,28 @@
-import CellList from '../../components/cell-list'
 import CodeCell from '../../components/code-cell'
 import styled from 'styled-components'
 import { useActions } from '../../hooks/use-actions'
 import { useTypedSelector } from '../../hooks/use-typed-selector' 
 import { Cell } from '../../state'
+import { DescriptionElementType } from '../../questionBank'
 
 interface QuestionProps {
   title: string
-  description: string
+  description: {
+    type: DescriptionElementType
+    content: string | string[]
+  }[]
   media: string
   startingCode: string
+}
+
+const parseQuestionDescriptionElement = (type: string, content: string | string[]) => {
+  switch(type) {
+    case DescriptionElementType.PARAGRAPH:
+      return <p>{content}</p>
+    case DescriptionElementType.LIST:
+      // @ts-ignore
+      return <ul>{content.map(el => <li>{el}</li>)}</ul>
+  }
 }
 
 const Question: React.FC<QuestionProps> = ({ title, description, media, startingCode }) => {
@@ -21,12 +34,16 @@ const Question: React.FC<QuestionProps> = ({ title, description, media, starting
     insertCellAfter(null, 'code')
   }
 
+  const parsedDescription = description.map(({ type, content }) => parseQuestionDescriptionElement(type, content))
+
   return (
     <QuestionWrapper>
       <QuestionCard>
         <QuestionTitle>{title}</QuestionTitle>
         <QuestionTop>
-          <QuestionDescription>{description}</QuestionDescription>
+          <QuestionDescription>
+            {parsedDescription}
+          </QuestionDescription>
           <img src={media} alt="question image" />
         </QuestionTop>
       </QuestionCard>

@@ -1,38 +1,227 @@
-export const QUESTION_BANK = [
+
+type Question = {
+  title: string
+  href: string
+  description: {
+    type: DescriptionElementType
+    content: string | string[]
+  }[]
+  media: string
+  startingCode: string
+}
+
+export enum DescriptionElementType {
+  PARAGRAPH = 'paragraph',
+  LIST = 'list',
+  REMINDER = 'reminder'
+}
+
+export const QUESTION_BANK: Question[] = [
   {
     title: 'Counter',
     href: 'counter',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet velit odio. Sed tincidunt erat nec pulvinar consectetur. Vivamus urna mi, egestas at diam sit amet, tincidunt dapibus ligula. Duis lacus elit, consequat non cursus vel, lobortis vitae sapien. Quisque vitae accumsan lacus, et iaculis nisl. Vestibulum lacinia mauris nisl, sit amet lobortis tellus tincidunt ut. Morbi ex ipsum, sollicitudin sit amet feugiat vel, varius vestibulum neque. Mauris porta et felis fermentum tincidunt. Donec rhoncus viverra lacus, nec laoreet neque tempus eu. Sed nec gravida est. Integer at ante pretium, bibendum ipsum ac, accumsan purus. Nulla hendrerit magna augue, nec venenatis lectus fringilla non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    \n
-    Aliquam porttitor lorem molestie venenatis dignissim. Donec vitae interdum urna, sed interdum massa. Donec fermentum eu tellus at dapibus. Vivamus interdum euismod massa, ut consectetur ligula placerat nec. Nulla facilisi. Proin vel massa semper, pretium lorem vel, suscipit lorem. Duis ut ipsum dapibus, dapibus risus non, tristique ex. Ut feugiat blandit sollicitudin.
-    \n
-    Praesent eu erat scelerisque, lacinia mauris id, gravida velit. Integer ut arcu dolor. In ac eros pharetra, viverra purus eget, euismod mi. Nam eleifend ipsum elit, non ullamcorper metus dapibus a. Phasellus eleifend, ex eu tincidunt feugiat, velit dui pulvinar est, in aliquam dui erat nec neque. Aliquam erat volutpat. Donec sodales, arcu quis rutrum luctus, augue metus dapibus turpis, at semper risus felis et dui. Praesent aliquam ultricies sapien ut fermentum. Nunc vel lorem at metus vulputate placerat et volutpat dolor. Vestibulum eget ligula mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. Vivamus pretium est lorem, nec blandit justo fringilla ac.
-    \n
-    Morbi iaculis velit at massa imperdiet, eu interdum tellus efficitur. Mauris in placerat sem. Nulla varius quam id ligula dignissim, quis condimentum quam sodales. Morbi euismod, orci vel vestibulum fermentum, mi erat tincidunt arcu, in varius nulla massa nec libero. Quisque congue lacinia consequat. Sed porttitor, justo malesuada rutrum efficitur, quam nisl mollis orci, at rhoncus odio lacus vel purus. Proin a arcu ornare lectus ornare tempor. Nulla vel scelerisque dolor. Fusce pellentesque efficitur turpis, eget condimentum turpis placerat et. Aenean malesuada consectetur risus ut suscipit. Vestibulum at quam vitae diam pellentesque dictum in id tellus. Phasellus semper, nisl sit amet commodo sodales, justo ante blandit ligula, ac eleifend lectus sapien non mi.
-    \n
-    Vivamus finibus euismod ipsum sit amet fermentum. Nunc feugiat ante dui, non suscipit erat laoreet id. Morbi consectetur volutpat nisl lobortis maximus. Nulla iaculis pretium ligula, ut viverra turpis maximus nec. In et ex sed velit malesuada pretium vel vel nisl. Morbi convallis gravida odio, ut tempor tellus. Proin lobortis nisi tellus, eu consectetur purus ornare faucibus. Maecenas consequat elit arcu, ac feugiat elit fermentum vitae. Suspendisse enim nibh, aliquet in aliquet nec, maximus euismod libero. Vivamus imperdiet suscipit lectus, ac pellentesque nisi pharetra quis. `,
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Implement a counter. Your app should:'
+      },
+      {
+        type: DescriptionElementType.LIST,
+        content: [
+          'Store the current value in the variable "count"',
+          'Implement a button that will INCREMENT the current value by 1',
+          'Implement a button that will DECREMENT the current value by 1'
+        ]
+      },
+      {
+        type: DescriptionElementType.REMINDER,
+        content: 'Remeber to call function "show" with your component to render it in the preview window (ex. show(<App />))'
+      },
+    ],
     media: 'https://im7.ezgif.com/tmp/ezgif-7-f43ea32d2c52.gif',
     startingCode: 'sadfasdfasdfasdfasdfasdfkjnasdlfkjnaskdlfaksjdlfnasdfnasdfjnasdfnalsdkgnasdlgnaskljdfasdfajsdk'
   },
   {
-    title: 'Autocomplete',
-    href: 'autocomplete',
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet velit odio. Sed tincidunt erat nec pulvinar consectetur. Vivamus urna mi, egestas at diam sit amet, tincidunt dapibus ligula. Duis lacus elit, consequat non cursus vel, lobortis vitae sapien. Quisque vitae accumsan lacus, et iaculis nisl. Vestibulum lacinia mauris nisl, sit amet lobortis tellus tincidunt ut. Morbi ex ipsum, sollicitudin sit amet feugiat vel, varius vestibulum neque. Mauris porta et felis fermentum tincidunt. Donec rhoncus viverra lacus, nec laoreet neque tempus eu. Sed nec gravida est. Integer at ante pretium, bibendum ipsum ac, accumsan purus. Nulla hendrerit magna augue, nec venenatis lectus fringilla non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    \n
-    Aliquam porttitor lorem molestie venenatis dignissim. Donec vitae interdum urna, sed interdum massa. Donec fermentum eu tellus at dapibus. Vivamus interdum euismod massa, ut consectetur ligula placerat nec. Nulla facilisi. Proin vel massa semper, pretium lorem vel, suscipit lorem. Duis ut ipsum dapibus, dapibus risus non, tristique ex. Ut feugiat blandit sollicitudin.
-    \n
-    Praesent eu erat scelerisque, lacinia mauris id, gravida velit. Integer ut arcu dolor. In ac eros pharetra, viverra purus eget, euismod mi. Nam eleifend ipsum elit, non ullamcorper metus dapibus a. Phasellus eleifend, ex eu tincidunt feugiat, velit dui pulvinar est, in aliquam dui erat nec neque. Aliquam erat volutpat. Donec sodales, arcu quis rutrum luctus, augue metus dapibus turpis, at semper risus felis et dui. Praesent aliquam ultricies sapien ut fermentum. Nunc vel lorem at metus vulputate placerat et volutpat dolor. Vestibulum eget ligula mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. Vivamus pretium est lorem, nec blandit justo fringilla ac.
-    \n
-    Morbi iaculis velit at massa imperdiet, eu interdum tellus efficitur. Mauris in placerat sem. Nulla varius quam id ligula dignissim, quis condimentum quam sodales. Morbi euismod, orci vel vestibulum fermentum, mi erat tincidunt arcu, in varius nulla massa nec libero. Quisque congue lacinia consequat. Sed porttitor, justo malesuada rutrum efficitur, quam nisl mollis orci, at rhoncus odio lacus vel purus. Proin a arcu ornare lectus ornare tempor. Nulla vel scelerisque dolor. Fusce pellentesque efficitur turpis, eget condimentum turpis placerat et. Aenean malesuada consectetur risus ut suscipit. Vestibulum at quam vitae diam pellentesque dictum in id tellus. Phasellus semper, nisl sit amet commodo sodales, justo ante blandit ligula, ac eleifend lectus sapien non mi.
-    \n
-    Vivamus finibus euismod ipsum sit amet fermentum. Nunc feugiat ante dui, non suscipit erat laoreet id. Morbi consectetur volutpat nisl lobortis maximus. Nulla iaculis pretium ligula, ut viverra turpis maximus nec. In et ex sed velit malesuada pretium vel vel nisl. Morbi convallis gravida odio, ut tempor tellus. Proin lobortis nisi tellus, eu consectetur purus ornare faucibus. Maecenas consequat elit arcu, ac feugiat elit fermentum vitae. Suspendisse enim nibh, aliquet in aliquet nec, maximus euismod libero. Vivamus imperdiet suscipit lectus, ac pellentesque nisi pharetra quis. `,
+    title: 'Form',
+    href: 'form',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Implement a user login form. Your app should:'
+      },
+      {
+        type: DescriptionElementType.LIST,
+        content: [
+          'Implement an input field taking user EMAIL ADDRESS',
+          'Implement an input field taking user PASSWORD',
+          'Implement a button with text "Login" and add an onClick handler that will submit user details',
+          'Disable the button when email address is not present or when the password is less than 6 characters long',
+        ]
+      },
+      {
+        type: DescriptionElementType.REMINDER,
+        content: 'Remeber to call function "show" with your component to render it in the preview window (ex. show(<App />))'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: `import { useState, useEffect } from 'react';
+    const App = () => {
+      const [password, setPassword] = useState('');
+      const [email, setEmail] = useState('');
+      const [buttonDisabled, setButtonDisabled] = useState(true);
+    
+      const handleLogin = () => {
+        alert(email, password);
+      };
+    
+      useEffect(() => {
+        if (email && password.length > 6) {
+          setButtonDisabled(false);
+        } else {
+          setButtonDisabled(true);
+        }
+      }, [email, password]);
+    
+      return (
+        <>
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          <button onClick={() => handleLogin()} disabled={buttonDisabled}>
+            Login
+          </button>
+        </>
+      );
+    };
+    
+    show(<App />);`
+  },
+  {
+    title: 'Lorem Ipsum 1',
+    href: 'lorem-ipsum-1',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
     media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     startingCode: ''
   },
   {
-    title: 'Lorem Ipsum',
-    href: 'lorem-ipsum',
-    description: 'Lorem Ipsum description',
+    title: 'Lorem Ipsum 2',
+    href: 'lorem-ipsum-2',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 3',
+    href: 'lorem-ipsum-3',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 4',
+    href: 'lorem-ipsum-4',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 5',
+    href: 'lorem-ipsum-5',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 6',
+    href: 'lorem-ipsum-6',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 7',
+    href: 'lorem-ipsum-7',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 8',
+    href: 'lorem-ipsum-8',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 9',
+    href: 'lorem-ipsum-9',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
+    media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    startingCode: ''
+  },
+  {
+    title: 'Lorem Ipsum 10',
+    href: 'lorem-ipsum-11',
+    description: [
+      {
+        type: DescriptionElementType.PARAGRAPH,
+        content: 'Lorem Ipsum description'
+      }
+    ],
     media: 'https://images.pexels.com/photos/10161241/pexels-photo-10161241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     startingCode: ''
   }

@@ -25,10 +25,12 @@ const App = () => {
       <Provider store={store}>
         <AppWrapper>
           <SideNav questionsList={navbarQuestionsList}/>
-          <Routes>
-            <Route path='/' element={<LandingPage />} />
-            {questionsRoutesList}
-          </Routes>
+          <Body>
+            <Routes>
+              <Route path='/' element={<LandingPage />} />
+              {questionsRoutesList}
+            </Routes>
+          </Body>
         </AppWrapper>
       </Provider>
     </Router>
@@ -38,6 +40,9 @@ const App = () => {
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: row;
+`
+const Body = styled.div`
+  margin-left: 280px;
 `
 
 ReactDOM.render(<App />, document.querySelector('#root'))
