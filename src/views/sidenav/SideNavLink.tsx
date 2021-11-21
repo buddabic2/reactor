@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import NewTabIcon from '../../assets/new-tab.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 interface SideNavLinkProps {
   label: string
@@ -11,7 +12,7 @@ const SideNavLink: React.FC<SideNavLinkProps> = ({ label, href }) => {
   return (
     <SideNavLinkWrapper>
       <a href={href} target="_blank" rel="noreferrer">{label}</a>
-      <img src={NewTabIcon} alt="Open in new tab icon"/>
+      <FontAwesomeIcon className="icon" icon={faExternalLinkAlt}/>
     </SideNavLinkWrapper>
   )
 }
@@ -34,8 +35,7 @@ const SideNavLinkWrapper = styled.div`
     transition: 0.1s;
   }
 
-  img {
-    height: 20px;
+  .icon {
     margin-left: 20px;
     opacity: 0;
   }
@@ -44,7 +44,7 @@ const SideNavLinkWrapper = styled.div`
     background-color: #f8f9fa11;
     color: #f8f9fa;
 
-    img {
+    .icon {
       opacity: 1;
       cursor: pointer;
     }

@@ -32,6 +32,15 @@ const NewLandingPageWrapper = styled.div`
 const ImagesWrapper = styled.div`
   min-width: 50%;
   margin-right: 20px;
+
+  img {
+    transition: 0.1s ease-in;
+  }
+
+  img:hover {
+    transform: scale(1.05);
+  }
+
 `
 
 const FirstImage = styled.img`

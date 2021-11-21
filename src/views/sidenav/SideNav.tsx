@@ -5,6 +5,7 @@ import SideNavHeader from './SideNavHeader'
 import { Link } from "react-router-dom";
 import LinkedIn from '../../assets/linkedin-logo.png'
 import Gtthub from '../../assets/github-sign.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface SideNavProps {
   questionsList: {
@@ -32,10 +33,10 @@ const SideNav: React.FC<SideNavProps> = ({ questionsList }) => {
       <SideNavFooter>
         <p>by Dawid Budaszewski</p>
         <a href="https://github.com/buddabic2">
-          <img src={Gtthub} alt="" />
+          <i className="fab fa-github-square" />
         </a>
         <a href="https://www.linkedin.com/in/dawid-budaszewski/">
-          <img src={LinkedIn} alt="" />
+          <i className="fab fa-linkedin" />
         </a>
       </SideNavFooter>
     </SideNavWrapper>
@@ -77,12 +78,12 @@ const SideNavFooter = styled.div`
   display: flex;
   position: absolute;
   bottom: 0;
-  p {
-    margin: 0;
+
+  i {
+    color: #dee2e6;
   }
 
-  img {
-    height: 15px;
-    width: 15px;
+  p {
+    margin: 0;
   }
 `

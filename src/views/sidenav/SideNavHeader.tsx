@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import styled, { css } from 'styled-components';
-import Arrow from '../../assets/arrow-down.png'
 
 interface SideNavHeaderProps {
   label: string
@@ -9,20 +10,27 @@ interface SideNavHeaderProps {
 const SideNavHeader: React.FC<SideNavHeaderProps> = ({ label, children }) => {
   const [open, setOpen] = useState(false)
   return (
-    <SideNavHeaderWrapper open={open}>
-      <LabelWrapper>
+    <div>
+      <LabelWrapper open={open}>
         {label}
-        <img src={Arrow} onClick={() => setOpen(!open)} alt="open/collapse arrow"/>
+        <FontAwesomeIcon className="icon" icon={faChevronDown} onClick={() => setOpen(!open)}/>
       </LabelWrapper>
       {open && children}
-    </SideNavHeaderWrapper>
+    </div>
   )
 }
 
 export default SideNavHeader
 
-const SideNavHeaderWrapper = styled.div<{ open: boolean }>`
-  img {
+const LabelWrapper = styled.h3<{ open: boolean }>`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  padding-left: 20px;
+
+  .icon {
     height: 30px;
     width: 30px;
     margin-left: 20px;
@@ -32,15 +40,5 @@ const SideNavHeaderWrapper = styled.div<{ open: boolean }>`
     ${props => props.open && css`
       transform: rotate(180deg);
     `}
-
   }
-`
-
-const LabelWrapper = styled.h3`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 1.4rem;
-  font-weight: 300;
-  padding-left: 20px;
 `
